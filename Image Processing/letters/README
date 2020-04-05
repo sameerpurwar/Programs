@@ -1,0 +1,34 @@
+These are the reference links:
+
+[1]https://stackoverflow.com/questions/23506105/extracting-text-opencv
+
+[2]https://docs.opencv.org/master/df/d3d/tutorial_py_inpainting.html
+
+[3]https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_contours/ py_contours_hierarchy/py_contours_hierarchy.html
+
+[4]For any help ask me or dig through the code. The parameter tuning can be done to acheived the desired result. 
+
+[5]The parameters will depend on the kind of dataset. If the doesn't work as expexted tune the following parameter.
+
+if r > 0.4 and w > 8 and h > 8 and w < 300:
+        cv2.rectangle(mask, (x, y), (x+w-1, y+h-1), (146,255,255), 1)
+        cv2.drawContours(fmask, contours, idx, 255, -1)
+
+Try to tune the if condition parametres like 0.4 or 8 or 300. These parameter dependes upon the size of the image and also the child contours[3].
+
+[6]Similiarly shape of kernel can be changed.
+
+kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (3, 3))
+kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (9,1))
+
+[7]for the function cv2.findcontours, u can make use of cv2.RETR_EXTERNAL/CV2.RETR_CCOMP or RETR_LIST. 
+I am using RETR_CCOMP. If it is not giving correct result u can change it.You can reda about it in [3].
+For image1 use RETR_EXTERNAL. for image2 use RETR_CCOMP.
+
+
+[8]Testing and debugging section.(Run it in anaconda spyder IDE)
+
+[9]Always stay with me.  
+
+
+SAMEER
